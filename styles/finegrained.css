@@ -1,0 +1,189 @@
+body {
+  width: 1000px;
+  margin: 0px auto 20px;
+  padding-top: 65px; 
+}
+
+.header {
+  font-weight: 100px;
+  margin: 0px auto 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header h1 {
+  margin: 10px auto 15px;
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header h2 {
+  margin: 0px auto 8px;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header h3 {
+  margin: 0px auto 8px;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header h4 {
+  margin: 0px auto 20px;
+  font-size: 19px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.titles{
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
+}
+
+
+section {
+  margin: 40px auto 30px;
+  clear: both;
+}
+
+.abstract {
+  margin: 10px 10px 10px;
+  clear: both;
+}
+
+.subtitle header {
+  margin: 0px 20px 10px;
+  font-size: 32px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.abstract p {
+  margin: 0px 20px 10px;
+  font-size: 18px;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+}
+
+section header {
+  padding-top: 0px; 
+  margin: 0px 20px 0px;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+section p {
+  padding: 10px 20px 5px;
+  font-size: 18px;
+  text-align: left;
+  line-height: 20pt;
+  font-family: "Montserrat", sans-serif;
+}
+
+.author {
+  padding: 2px 20px 10px;
+  font-size: 18px;
+  color: grey;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+section h2 {
+  padding: 30px 20px 10px;
+  font-size: 20px;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+section p .cite {
+  font-size: 12px;
+}
+
+section p .citation{
+  font-family: Consolas, monaco, monospace;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+section .bibref {
+  padding: 20px 20px 5px;
+  font-family: Consolas, monaco, monospace;
+  font-size: 14px;
+  display: none;
+}
+
+.fakelink {
+  cursor: pointer;
+}
+
+img {
+  margin: 12px auto;
+  display: block;
+}
+
+.width75 { width: 75%; }
+.width96 { width: 96%; }
+
+ul {
+  padding: 5px 30px 5px;
+  font-size: 15px;
+  list-style-type: circle;
+}
+
+li {
+  margin: 10px 25px;
+}
+
+li .cite {
+  font-size: 11px;
+}
+
+.disable {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+footer {
+  padding: 20px;
+  margin: 10px auto 40px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.anchor{
+  display: block;
+  height: 50px; /*same height as header*/
+  margin-top: -50px; /*same height as header*/
+  visibility: hidden;
+}
+
+hr.mainhr {
+  border: 0px;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
+  background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
+  background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
+}
+
+hr.midhr {
+    border: 0px;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+
+a       { color: #888; }
+a:hover { text-decoration: underline; }
+a:focus { outline: #888 dotted thin; }
+
+::selection      { background: #B3BBBF; color: #FFF; }
+::-moz-selection { background: #B3BBBF; color: #FFF; }

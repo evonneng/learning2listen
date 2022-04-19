@@ -1,0 +1,9 @@
+einops
+matplotlib
+numpy
+opencv_contrib_python
+scipy
+seaborn
+six
+torch
+torchvision

@@ -1,0 +1,57 @@
+﻿/* Default Reset Sheet - Aron Yu*/
+
+html,body { margin:0; padding:0; border:0; background:transparent; font-size:10px; }
+
+div,span,article,aside,footer,header,hgroup,nav,section,figure,
+h1,h2,h3,h4,h5,h6,p,blockquote,a,ol,ul,li,
+table,tr,th,td,tbody,tfoot,thead {
+    margin:0; padding:0; border:0;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+img { margin:0; padding:0; border:0; }
+
+table { border-collapse:collapse; border-spacing:0; }
+
+input,select,textarea,form,fieldset {
+    margin:0; padding:0; border:0;
+}
+
+article,aside,dialog,figure,footer,header,hgroup,nav,section { display:block; }
+
+h1,h2,h3,h4,h5,h6,p,li,blockquote,td,th,a,caption,em,strong,figcaption,input,textarea,header,footer {
+    font-family: Helvetica, Futura, "Trebuchet MS", sans-serif;
+    font-size:100%;
+    font-weight:lighter;
+    font-style:normal;
+    line-height:100%;
+    text-indent:0;
+    text-decoration:none;
+    text-align:left;
+    color:#000;
+}
+
+ol,ul { list-style:none; }
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 { color:#000000; }
+
+h1         { font-size:24px; }
+h2         { font-size:20px; }
+h3         { font-size:16px; }
+h4         { font-size:14px; }
+h5         { font-size:14px; }
+h6         { font-size:14px; }
+
+h1 img,h2 img,h3 img,h4 img,h5 img,h6 img,figcaption img { margin:0; }
+
+/* Text Elements */
+strong     { font-weight:bold; }
+em         { font-style:italic; }
+
+td {
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+}

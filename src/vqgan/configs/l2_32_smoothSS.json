@@ -1,0 +1,31 @@
+{
+  "pipeline": "er2er",
+  "tag": "l2_32_smoothSS_",
+  "who": "listener",
+  "segment_tag": "",
+  "learning_rate": 2.0,
+  "warmup_steps": 100000,
+  "model_path": "models/",
+  "num_epochs": 5000000,
+  "batch_size": 32,
+  "log_step": 100,
+  "data": {
+   "local": true,
+   "basedir": "../",
+   "speaker": "conan"
+  },
+  "transformer_config":{
+    "in_dim": 56,
+    "hidden_size": 256,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 8,
+    "intermediate_size": 384,
+    "quant_sequence_length": 4,
+    "sequence_length": 32,
+    "quant_factor": 3
+  },
+  "VQuantizer": {
+    "n_embed": 200,
+    "zquant_dim": 256
+  }
+}

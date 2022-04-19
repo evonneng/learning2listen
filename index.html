@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Page Title -->
+  <title>Learning2Listen</title>
+
+  <link href="styles/reset.css" rel="stylesheet" type="text/css" />
+  <link href="styles/finegrained.css" rel="stylesheet" type="text/css" />
+  <link href="styles/finegrained_mobile.css" rel="stylesheet" type="text/css"
+    media="only screen and (max-device-width: 480px)" />
+  <link href="styles/lightbox.css" rel="stylesheet" type="text/css" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!--   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82486201-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-82486201-5');
+  </script> -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".fakelink").click(function () {
+        $(".bibref").slideToggle(600);
+      });
+
+      $(window).on('scroll', function () {
+        var position = $(this).scrollTop();
+        let sections = document.getElementsByClassName('block');
+        for (const item of sections) {
+          var target = $(item).offset().top;
+          var id = $(item).attr('id');
+          var span = document.getElementById(id);
+          if (position >= target - 100) {
+            span.classList.add("active")
+            // $('.navbar > ul > li > a').attr('href', id).addClass('active');
+          } else {
+            span.classList.remove("active")
+          }
+        };
+      });
+    });
+  </script>
+</head>
+
+
+<div class="navbar fixed-top" style="border:1px solid #555; width: 1000px">
+  <a id="nav-top" href="#top">Learning2Listen</a>
+  <a id="nav-abstract" href="#abstract">Abstract</a>
+  <a id="nav-overview" href="#overview">Overview</a>
+  <a id="nav-method" href="#method">Method</a>
+  <a id="nav-results" href="#results">Results</a>
+</div>
+
+<body>
+  <div id="nav-top top" class="block header">
+    <h1 style="line-height: 1.5em;">Learning to Listen: <br>
+      Modeling Non-Deterministic Dyadic Facial Motion</h1>
+    <br>
+    <span>
+      <h3>CVPR 2022</h3>
+      <br>
+      <div class="titles">
+        <h2>
+          <table align="center" width="100%">
+            <tbody>
+              <tr>
+                <td align="center" width="150px">
+                  <center>
+                    <span style="font-size:20px"><a href="http://people.eecs.berkeley.edu/~evonne_ng/"
+                        target="_blank">Evonne <br> Ng</a></span><br><span style="font-size:18px">UC Berkeley</span>
+                  </center>
+                </td>
+                <td align="center" width="150px">
+                  <center>
+                    <span style="font-size:20px"><a href="https://jhugestar.github.io/" target="_blank">Hanbyul <br>
+                        Joo</a></span><br><span style="font-size:18px">Seoul National University</span>
+                  </center>
+                </td>
+                <td align="center" width="150px">
+                  <center>
+                    <span style="font-size:20px"><a href="http://www-scf.usc.edu/~liwenhu/" target="_blank">Liwen<br>
+                        Hu</a></span><br><span style="font-size:18px">Pinscreen</span>
+                  </center>
+                </td>
+                <!-- <tr> -->
+                <td align="center" width="150px">
+                  <center>
+                    <span style="font-size:20px"><a href="http://www.hao-li.com/Hao_Li/Hao_Li_-_about_me.html"
+                        target="_blank">Hao <br> Li</a></span><br><span style="font-size:18px">Pinscreen</span>
+                  </center>
+                </td>
+                <td align="center" width="150px">
+                  <center>
+                    <span style="font-size:20px"><a href="#">Trevor <br> Darrell</a></span><br><span
+                      style="font-size:18px">UC Berkeley</span>
+                  </center>
+                </td>
+                <td align="center" width="150px">
+                  <center>
+                    <span style="font-size:20px"><a href="http://people.eecs.berkeley.edu/~kanazawa/"
+                        target="_blank">Angjoo <br> Kanazawa</a></span><br><span style="    font-size:18px">UC
+                      Berkeley</span>
+                  </center>
+                </td>
+                <!-- <tr> -->
+                <td align="center" width="150px">
+                  <center>
+                    <span style="font-size:20px"><a href="https://people.eecs.berkeley.edu/~shiry/"
+                        target="_blank">Shiry <br> Ginosar</a></span><br><span style="    font-size:18px">UC
+                      Berkeley</span>
+                  </center>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </h2>
+      </div>
+
+      <div class="links">
+    </span><a title="Paper" class="biglink" href="https://arxiv.org/abs/2204.08451" target="_blank">[Paper]</a>
+    <span><a title="Code" class="biglink" href="https://github.com/evonneng/learning2listen" target="_blank">[Code
+        + Data]</a>
+    </span><a title="Video" class="biglink" href="https://youtu.be/3CSlKZ5T6DU" target="_blank">[Supp. Video]</a>
+    </span>
+  </div>
+  </div>
+
+  <section class="teaser">
+    <center>
+      <img src="images/teaser.png" style="width: 93%" />
+      <p class="caption" style="line-height: 20pt">Given a speaker video, we extract the audio and motion of the
+        speaker. From these multimodal speaker inputs, our method synthesizes multiple realistic listener 3D motion
+        sequences (top and bottom) in an autoregessive fashion. The output of our approach can be optionally rendered as
+        photorealistic video. Please see <a title="Video" href="https://youtu.be/3CSlKZ5T6DU">supplementary video</a>
+        for results. </p>
+    </center>
+  </section>
+
+  <span class="anchor" id="abstract"></span>
+  <section style="border-top: 1px solid #555; padding-bottom: 20px; padding-top: 20px;" id="nav-abstract"
+    class="block abstract subtitle">
+    <br>
+    <header>Abstract</header>
+    <p><i>
+        We present a framework for modeling interactional communication in dyadic conversations: given multimodal inputs
+        of a speaker, we autoregressively output multiple possibilities of corresponding listener motion. We combine the
+        motion and speech audio of the speaker using a motion-audio cross attention transformer. Furthermore, we enable
+        non-deterministic prediction by learning a discrete latent representation of realistic listener motion with a
+        novel motion-encoding VQ-VAE. Our method organically captures the multimodal and non-deterministic nature of
+        nonverbal dyadic interactions. Moreover, it produces realistic 3D listener facial motion synchronous with the
+        speaker (see video). We demonstrate that our method outperforms baselines qualitatively and quantitatively via a
+        rich suite of experiments. To facilitate this line of research, we introduce a novel and large in-the-wild
+        dataset of dyadic conversations.
+      </i></p>
+  </section>
+
+  <span class="anchor" id="overview"></span>
+  <section style="border-top: 1px solid #555; padding-bottom: 20px; padding-top: 20px;" id="nav-overview" class="block">
+    <header>Overview</header>
+    <br><br>
+    <center>
+      <div style="width: 850px">
+        <p>The goal of our work is to model the conversational dynamics between a speaker and listener. We introduce a
+          novel motion VQ-VAE that allows us to output nondeterministic listener motion sequences in an autoregressive
+          manner. Given speaker motion and audio as inputs, our approach generates realistic, synchronous, and diverse
+          listener motion sequences that outperform prior SOTA.</p>
+        <br><br>
+      </div>
+      <video width="800" controls>
+        <source src="videos/teaser_fullaudio.mp4" type="video/mp4">
+      </video>
+    </center>
+    <br><br>
+  </section>
+
+  <span class="anchor" id="method"></span>
+  <section style="border-top: 1px solid #555; padding-bottom: 20px; padding-top: 20px;" id="nav-method" class="block">
+    <header>Method</header>
+    <br><br>
+    <center>
+      <div style="width: 850px">
+        <p> (1) To represent the manifold of realistic listner facial motion, we extend VQ-VAE to the domain of motion
+          synthesis. The learned discrete representation of motion enables us to model the next time step of motion as a
+          multinomial distribution. <br><br>
+          (2) We use a motion-audio cross-modal transformer that learns to fuse the speaker's audio and facial
+          motion.<br><br>
+          (3) We then learn an autoregressive transformer-based predictor that takes as input the speaker and listener
+          embeddings and outputs a distribution over possible synchronous and realistic listener responses, from which
+          we can sample multiple trajectories.</p>
+        <br><br>
+      </div>
+      <video width="800" controls>
+        <source src="videos/method_fullaudio.mp4" type="video/mp4">
+      </video>
+    </center>
+    <br><br>
+  </section>
+
+
+  <span class="anchor" id="results"></span>
+  <section style="border-top: 1px solid #555; padding-bottom: 20px; padding-top: 20px;" id="nav-results" class="block">
+    <header>Results</header>
+    <div class="links" style="padding-top: 15px">
+      <span><a title="Normal" class="biglink" href=#normal>[Highlights]</a>
+        <span><a title="Multi Traj" class="biglink" href=#multi_traj>[Multiple Samples]</a>
+          <span><a title="Baselines" class="biglink" href=#baseline>[Baselines]</a>
+          </span><a title="Ablations" class="biglink" href=#ablation>[Ablations]</a>
+        </span><a title="Fun Results" class="biglink" href=#fun>[Fun Results]</a>
+      </span>
+    </div>
+    <br><br>
+    <br><br>
+
+    <p id="normal" style="font-size: 25px">Highlights</p>
+    <p>Given a speaker's facial motion and audio, our method generates synchronous, realistic listeners.</p>
+    <center>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ex_1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ex_2.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ex_3.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ex_4.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <br><br>
+
+
+    <p id="multi_traj" style="font-size: 25px">Multiple Samples</p>
+    <p>Our method generates multiple possible listener trajectories from a single speaker input.</p>
+    <center>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/multi_1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/multi_2.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/multi_3.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <br><br>
+
+    <p id="baseline" style="font-size: 25px">Comparison vs. Baselines</p>
+    <p>Our method outperforms existing baselines.</p>
+    <center>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/baseline_nn.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/baseline_lfi.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/baseline_random.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <br><br>
+
+
+    <p id="ablation" style="font-size: 25px">Comparison vs. Ablations</p>
+    <p>Ablations demonstrate our method's strength.</p>
+    <center>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ablation_1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ablation_2.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ablation_3.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <br><br>
+
+
+    <p id="fun" style="font-size: 25px">Fun Results</p>
+    <p>Since our method generalizes to unseen speakers, we can generate results on novel listeners. We thank Devi Parikh
+      for allowing us to use her <a href="https://www.youtube.com/channel/UCpmHXgZMtYQH6wg9lDWNzoQ">podcast videos</a>.
+    </p>
+    <center>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ylan1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/joelle1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/jitendra2.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/devi1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/ayanna1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/dhruv1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table align="center" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/antonio2.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+            <td align="center" width="150px">
+              <center>
+                <video width="450" controls>
+                  <source src="videos/antonio1.mp4" type="video/mp4">
+                </video>
+              </center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <br><br>
+
+  </section>
+
+
+  <section style="border-top: 1px solid #555; padding-bottom: 20px; padding-top: 20px;" class="highlights subtitle">
+    <table style="width:100%">
+      <tr>
+        <th style="width: 60%">
+          <header>Paper</header>
+          <div>
+            <a title="Paper" href="https://arxiv.org/abs/2204.08451" target="_blank">
+              <img width="100%" src="images/paper.png" alt="Learning2Listen paper">
+            </a>
+          </div>
+        </th>
+        <th style="width: 40%; padding: 20px">
+          <div>
+            <header style="text-align: left">BibTex</header>
+            <h3 style="font-size: 14px; line-height: 1.2em">
+              @article{ng2022learning2listen, <br>
+              &nbsp;&nbsp; title={Learning to Listen: Modeling Non-Deterministic <br>
+              &nbsp;&nbsp; &nbsp;&nbsp; Dyadic Facial Motion}, <br>
+              &nbsp;&nbsp; author={Ng, Evonne and Joo, Hanbyul and Hu, Liwen <br>
+              &nbsp;&nbsp; &nbsp;&nbsp; and Li, Hao and and Darrell, Trevor <br>
+              &nbsp;&nbsp; &nbsp;&nbsp; and Kanazawa, Angjoo and Ginosar, Shiry}, <br>
+              &nbsp;&nbsp; journal={Proceedings of the IEEE/CVF Conference <br>
+              &nbsp;&nbsp; &nbsp;&nbsp; on Computer Vision and Pattern Recognition}, <br>
+              &nbsp;&nbsp; year={2022} <br>
+              }
+            </h3>
+          </div>
+        </th>
+
+      </tr>
+    </table>
+  </section>
+
+  <section style="border-top: 1px solid #555; padding-bottom: 20px; padding-top: 20px;" class="highlights subtitle">
+    <br>
+    <header>Acknowledgements</header>
+    <p>
+      The authors would like to thank Justine Cassell, Alyosha Efros, Alison Gopnik, Jitendra Malik, and the Facebook
+      FRL team for many insightful conversations and comments. Dave Epstein and Karttikeya Mangalam for Transformer
+      advice. Ruilong Li and Ethan Weber for technical support. The work of Ng and Darrell is supported in part by DoD
+      including DARPA’s XAI, LwLL, Machine Common Sense and/or SemaFor programs, which also supports Hu and Li in part,
+      as well as BAIR’s industrial alliance programs. Ginosar’s work is funded by the NSF under Grant #2030859 to the
+      Computing Research Association for the CIFellows Project. Parent authors would like to thank their children for
+      the daily reminder that they should learn how to listen.
+    </p>
+  </section>
+
+
+  <footer>Copyright &copy; 2022 University of California, Berkeley </footer>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+section {
+  margin: 50px auto 50px;
+}
+
+section p {
+  padding: 10px 20px 25px;
+}
+
+section p .citation{
+  padding: 0px 30px;
+  font-family: Consolas, monaco, monospace;
+  font-size: 14px;
+  font-weight: bold;
+}

@@ -1,0 +1,6 @@
+*.pyc
+runs/
+logs/
+data/
+models/
+vqgan/models/
