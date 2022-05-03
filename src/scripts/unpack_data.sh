@@ -10,7 +10,8 @@
 
 NAMES=("conan" "devi2" "fallon" "kimmel" "stephen" "trevor")
 for NAME in "${NAMES[@]}"; do
-    if [ -f data/${NAME}_data.tar ] then
+    if [ -f data/${NAME}_data.tar ] 
+    then
     	tar xvf data/${NAME}_data.tar -C data/ && rm data/${NAME}_data.tar 
     fi
 done
