@@ -188,3 +188,15 @@ However, the raw 3D meshes can be rendered using the [DECA renderer](https://git
 
 ## Potentially Coming Soon
 - Visualization of 3D meshes code from saved output
+
+
+# bibtex
+```
+@article{ng2022learning,
+  title={Learning to Listen: Modeling Non-Deterministic Dyadic Facial Motion},
+  author={Ng, Evonne and Joo, Hanbyul and Hu, Liwen and Li, Hao and Darrell, Trevor and Kanazawa, Angjoo and Ginosar, Shiry},
+  journal={arXiv preprint arXiv:2204.08451},
+  year={2022}
+}
+```
+
