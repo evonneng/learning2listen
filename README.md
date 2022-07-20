@@ -88,6 +88,7 @@ The downloaded data will unpack into the following directory structure as viewed
 
 Our dataset consists of 6 different youtube channels named accordingly.
 Please see comments in `$L2L_PATH/scripts/download_models.sh` for more details.
+For access to the raw videos, please contact Evonne.
 
 ## Data Format:
 The data format is as described below:
