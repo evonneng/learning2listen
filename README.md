@@ -107,7 +107,7 @@ To train and test on your own videos, please follow this process to convert your
 
 (Optional) In our paper, we ran preprocessing to figure out when a each person is speaking or listening. We used this information to segment/chunk up our data. We then extracted speaker-only audio by removing listener back-channels.
 
-1. Run [SyncNet](https://github.com/evonneng/social-avatar-data-processing/tree/4f6740e269583aaf2e917ae21e8f5390c473122e/tools/syncnet_python) on the video to determine who is speaking when. 
+1. Run [SyncNet](https://github.com/joonson/syncnet_python) on the video to determine who is speaking when. 
 2. Then run [Multi Sensory](https://github.com/andrewowens/multisensory) to obtain speaker's audio with all the listener backchannels removed. 
 
 For the main processing, we assuming there are 2 people in the video - one speaker and one listener... 
