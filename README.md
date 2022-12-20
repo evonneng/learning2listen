@@ -193,11 +193,13 @@ However, the raw 3D meshes can be rendered using the [DECA renderer](https://git
 
 # bibtex
 ```
-@article{ng2022learning,
-  title={Learning to Listen: Modeling Non-Deterministic Dyadic Facial Motion},
-  author={Ng, Evonne and Joo, Hanbyul and Hu, Liwen and Li, Hao and Darrell, Trevor and Kanazawa, Angjoo and Ginosar, Shiry},
-  journal={arXiv preprint arXiv:2204.08451},
-  year={2022}
+@InProceedings{Ng_2022_CVPR,
+    author    = {Ng, Evonne and Joo, Hanbyul and Hu, Liwen and Li, Hao and Darrell, Trevor and Kanazawa, Angjoo and Ginosar, Shiry},
+    title     = {Learning To Listen: Modeling Non-Deterministic Dyadic Facial Motion},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {20395-20405}
 }
 ```
 
