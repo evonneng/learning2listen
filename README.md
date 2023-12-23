@@ -49,14 +49,14 @@ IMPORTANT: After installing torch, please make sure to modify the `site-packages
 # Download Data and Models:
 ## Download Data:
 
-Please first download the dataset for the corresponding individual with google drive.
+Please first download the dataset for the corresponding individuals.
 
-* [Conan Data](https://drive.google.com/u/0/uc?id=1EqPuF28OdJ-pu3h8mG9QDOaYoWm4xf78)
-* [Devi Data](https://drive.google.com/u/0/uc?id=1VPv5HUWz8s72XWWAlqIEyhoi8dpDDWEB)
-* [Fallon Data](https://drive.google.com/u/0/uc?id=1N8dtj72NJVN0fmzIxMraceK7FIT8aXx8)
-* [Kimmel Data](https://drive.google.com/u/0/uc?id=1FhUjaekGFmgzTu_7F89JT5_BAEw9ewSQ)
-* [Stephen Data](https://drive.google.com/u/0/uc?id=1dMW1_aUAbCH_v6qS6alULebr7_IpQm-w)
-* [Trevor Data](https://drive.google.com/u/0/uc?id=1I2DhvZDteaOPGcJOeh_0gUkPRhV68ChW)
+* [Conan Data](http://learning2listen.berkeleyvision.org/conan_data.tar)
+* [Devi Data](http://learning2listen.berkeleyvision.org/devi2_data.tar)
+* [Fallon Data](http://learning2listen.berkeleyvision.org/fallon_data.tar)
+* [Kimmel Data](http://learning2listen.berkeleyvision.org/kimmel_data.tar)
+* [Stephen Data](http://learning2listen.berkeleyvision.org/stephen_data.tar)
+* [Trevor Data](http://learning2listen.berkeleyvision.org/trevor_data.tar)
 
 Make sure all downloaded .tar files are moved to the directory `$L2L_PATH/data/` (e.g. `$L2L_PATH/data/conan_data.tar`)
 
