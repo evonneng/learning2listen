@@ -120,10 +120,10 @@ For the main processing, we assuming there are 2 people in the video - one speak
 ## Download Model:
 Please first download the models for the corresponding individual with google drive.
 
-* [Conan Models](https://drive.google.com/u/0/uc?id=1YNvDut219jjXTYpeGUo7ka8boHUufKqa)
-* [Fallon Models](https://drive.google.com/u/0/uc?id=14ADfugN54rRG6gYf7trw91-52Pk_pGsP)
-* [Stephen Models](https://drive.google.com/u/0/uc?id=1KAGdXb8e8gO7387t9zlYH8I6rYS_bOdd)
-* [Trevor Models](https://drive.google.com/u/0/uc?id=1nIAWjlydSxNjtJFevzwtq4LS8TquKeg2)
+* [Conan Models](https://drive.google.com/file/d/1HlGLMPcshqwdmQvryKPVsYvd9oL2yGML/view?usp=drivesdk)
+* [Fallon Models](https://drive.google.com/file/d/1_d4D6T9qflgd15uA3xhtp9wvchWbg9Da/view?usp=drivesdk)
+* [Stephen Models](https://drive.google.com/file/d/1gXt2pjpnPItCIfINKCToBacoTI-cVs0W/view?usp=drivesdk)
+* [Trevor Models](https://drive.google.com/file/d/1M5y5J3NKhMbzIaU58_Gz8yOFQZuOVhCn/view?usp=drivesdk)
 
 Make sure all downloaded .tar files are moved to the directory `$L2L_PATH/models/` (e.g. `$L2L_PATH/models/conan_models.tar`)
 
